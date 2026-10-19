@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── MAGNETARX · minimal dark/purple system ─────────────────────────── */
+:root {
+  --bg: #000000;
+  --bg-2: #000000;
+  --line: rgba(168, 85, 247, 0.22);
+  --line-soft: rgba(168, 85, 247, 0.12);
+  --txt: #F3F0FF;
+  --dim: #9B94AD;
+  --violet: #8b5cf6;
+  --violet-2: #a855f7;
+  --magenta: #c084fc;
+  --hover-glow: rgba(168, 85, 247, 0.18);
+  --panel: rgba(17, 17, 24, 0.95);
+}
+
+* {
+  border-color: var(--line);
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #000;
+  color: var(--txt);
+  font-family: Inter, system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+  background: #000;
+  position: relative;
+  z-index: 0;
+}
+
+h1, h2, h3 {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  text-wrap: balance;
+}
+
+::selection { background: rgba(58, 0, 193, 0.4); color: #fff; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #2a2145; border-radius: 8px; }
+
+/* backdrop: purple bloom + faint grid + grain */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.12), transparent 28%),
+    radial-gradient(circle at 80% 0%, rgba(168, 85, 247, 0.08), transparent 28%),
+    #000000;
+}
+.backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: radial-gradient(75% 60% at 50% 30%, #000 0%, transparent 85%);
+  opacity: 0.25;
+}
+.backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+
+.mono {
+  font-family: "Space Grotesk", ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.rule { height: 1px; background: var(--line); }
+
+.grad-text {
+  background: linear-gradient(100deg, var(--violet-2), var(--magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── app icon placeholder ── */
+.app-icon {
+  position: relative;
+  border-radius: 26%;
+  background: linear-gradient(150deg, rgba(29, 20, 45, 0.98), rgba(15, 10, 20, 0.96));
+  border: 1px solid rgba(168, 85, 247, 0.38);
+  box-shadow:
+    0 22px 60px -28px rgba(168, 85, 247, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.app-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(167, 139, 250, 0.35), transparent 55%);
+  opacity: 0.7;
+}
+
+/* ── phone frame + placeholder screens ── */
+.phone {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 19;
+  border-radius: 34px;
+  padding: 8px;
+  background: linear-gradient(160deg, rgba(31, 22, 43, 1), rgba(9, 8, 14, 1));
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  box-shadow: 0 30px 50px -30px rgba(168, 85, 247, 0.35), 0 0 0 1px rgba(168, 85, 247, 0.08);
+}
+.screen {
+  height: 100%;
+  border-radius: 27px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(8, 7, 12, 1), rgba(15, 12, 20, 1));
+  border: 1px solid rgba(168, 85, 247, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 12px;
+}
+.screen-image-wrapper {
+  padding: 0;
+}
+.screen-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 27px;
+}
+.bar { border-radius: 6px; background: rgba(255, 255, 255, 0.07); }
+.bar.v { background: linear-gradient(90deg, var(--violet), var(--magenta)); }
+.block {
+  border-radius: 12px;
+  background:
+    radial-gradient(120% 90% at 20% 0%, rgba(139, 92, 246, 0.55), transparent 60%),
+    linear-gradient(160deg, #221a3d, #120d24);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+.notch {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 16px;
+  border-radius: 12px;
+  background: #08060f;
+  z-index: 2;
+}
+
+.float-a { animation: floaty 7s ease-in-out infinite; }
+.float-b { animation: floaty 7s ease-in-out infinite 1.2s; }
+.float-c { animation: floaty 7s ease-in-out infinite 2.4s; }
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* ── buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s, background 0.35s;
+}
+.btn-primary {
+  background: linear-gradient(100deg, #8b5cf6, var(--violet) 45%, var(--magenta));
+  color: #fff;
+  border: 1px solid rgba(216, 180, 254, 0.45);
+  box-shadow: 0 18px 40px -22px rgba(168, 85, 247, 0.9);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 50px -20px rgba(168, 85, 247, 0.85);
+}
+.btn-ghost {
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  color: var(--txt);
+  background: rgba(168, 85, 247, 0.03);
+}
+.btn-ghost:hover {
+  background: rgba(168, 85, 247, 0.12);
+  border-color: rgba(196, 181, 253, 0.7);
+  box-shadow: inset 0 0 0 1px rgba(168, 85, 247, 0.12);
+}
+
+/* download rows */
+.dl-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.35rem 0.4rem;
+  border-top: 1px solid var(--line);
+  transition: background 0.3s, padding 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.dl-row:hover {
+  background: rgba(168, 85, 247, 0.05);
+  border-color: rgba(196, 181, 253, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(168, 85, 247, 0.08);
+  padding-left: 1rem;
+}
+@media (max-width: 720px) {
+  .dl-row { grid-template-columns: 1fr auto; }
+  .dl-meta { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
