@@ -8,7 +8,13 @@ export const navigation = [
 ];
 
 export const downloads = [
-  { os: 'Android', detail: 'APK · v1.0.0', size: '60.4 MB', cta: 'Download', href: '/brick.apk' }
+  {
+    os: 'Android',
+    detail: 'APK · v1.0.0',
+    size: '60.4 MB',
+    cta: 'Download',
+    href: 'https://github.com/hshift-t/update_sys/releases/download/v1.0.0/Brick-Downloader.v1.0.0.apk',
+  },
 ];
 
 export const showcaseItems = [
