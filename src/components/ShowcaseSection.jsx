@@ -11,17 +11,6 @@ export function ShowcaseSection() {
         <motion.p custom={0} initial="hidden" whileInView="show" viewport={inView} variants={rise} className="mono">
           02 — Showcase
         </motion.p>
-        <motion.p
-          custom={1}
-          initial="hidden"
-          whileInView="show"
-          viewport={inView}
-          variants={rise}
-          className="max-w-xs text-right text-sm"
-          style={{ color: 'var(--dim)' }}
-        >
-          Screenshots are placeholders — swap in real captures.
-        </motion.p>
       </div>
 
       <motion.h2

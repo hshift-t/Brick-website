@@ -5,6 +5,7 @@ import savedScreenshot from '../assets/3.jpeg';
 export const navigation = [
   { label: 'Showcase', href: '#showcase' },
   { label: 'Download', href: '#download' },
+  { label: 'Install guide', href: '#install' },
 ];
 
 export const downloads = [
@@ -13,7 +14,7 @@ export const downloads = [
     detail: 'APK · v1.0.0',
     size: '60.4 MB',
     cta: 'Download',
-    href: 'https://github.com/hshift-t/update_sys/releases/download/v1.0.0/Brick-Downloader.v1.0.0.apk',
+    href: '/downloads/Brick-Downloader.v1.0.0.apk',
   },
 ];
 

@@ -32,8 +32,8 @@ export function HeroSection() {
             className="mt-7 max-w-md text-[1.02rem] leading-relaxed"
             style={{ color: 'var(--dim)' }}
           >
-            One quiet little app that pulls video and audio off 1000+ platforms —
-            no watermark, no account, no telemetry. Just the file, in your hands.
+            Save video and audio from supported platforms like YouTube, Instagram,
+            and Pinterest, plus 1000+ other sites. Free, with no account or telemetry.
           </motion.p>
 
           <motion.div custom={3} initial="hidden" animate="show" variants={rise} className="mt-9 flex flex-wrap gap-3">

@@ -9,9 +9,10 @@ export function Footer() {
           <AppIcon size={28} />
           <span className="text-sm" style={{ color: 'var(--dim)' }}>© 2026 Brick</span>
         </div>
+        <p className="max-w-xl text-xs leading-relaxed" style={{ color: 'var(--dim)' }}>
+          Download only content you own or have permission to save. Respect copyright and platform terms.
+        </p>
         <div className="flex gap-7">
-          <a href="#" className="mono transition-colors hover:text-white">Privacy</a>
-          <a href="#" className="mono transition-colors hover:text-white">Source</a>
           <a href="#top" className="mono transition-colors hover:text-white">Back to top ↑</a>
         </div>
       </div>
