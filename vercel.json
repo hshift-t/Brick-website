@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/downloads/Brick-Downloader.v1.0.0.apk",
-      "destination": "https://github.com/hshift-t/update_sys/releases/download/v1.0.0/Brick-Downloader.v1.0.0.apk"
+      "source": "/downloads/Brick-v1.0.1.apk",
+      "destination": "https://github.com/hshift-t/update_sys/releases/download/v1.0.1/Brick-v1.0.1.apk"
     }
   ],
   "headers": [

@@ -11,10 +11,10 @@ export const navigation = [
 export const downloads = [
   {
     os: 'Android',
-    detail: 'APK · v1.0.0',
+    detail: 'APK · v1.0.1',
     size: '60.4 MB',
     cta: 'Download',
-    href: '/downloads/Brick-Downloader.v1.0.0.apk',
+    href: '/downloads/Brick-v1.0.1.apk',
   },
 ];
 
