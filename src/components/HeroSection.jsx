@@ -53,6 +53,13 @@ export function HeroSection() {
           <div className="grid gap-2">
             <span className="mono">Brick - Downloader</span>
             <span className="text-sm" style={{ color: 'var(--dim)' }}>v1.0.0 · 60.4 MB</span>
+            <span
+              className="mt-1 inline-flex w-fit items-center rounded-full border px-3 py-1 
+              bg-violet-800 color-white text-xs font-medium"
+              style={{ borderColor: 'var(--line)'}}
+            >
+              50k+ installs
+            </span>
           </div>
         </motion.div>
       </div>
