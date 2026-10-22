@@ -58,7 +58,7 @@ export function HeroSection() {
               bg-violet-800 color-white text-xs font-medium"
               style={{ borderColor: 'var(--line)'}}
             >
-              50k+ installs
+              5k+ installs
             </span>
           </div>
         </motion.div>
